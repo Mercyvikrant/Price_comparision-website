@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="static\css\login.css">
+</head>
+<body>
+    <form method="POST" target="_blank">
+        <fieldset>
+            <h1>LOGIN</h1>
+            <label for="name">USER NAME:
+                <input type="text" name="name" id="name" placeholder="USER NAME OR ID" required>
+            </label>
+            <label for="pass">PASSWORD:
+                <input type="password" name="pass" id="pass" placeholder="password" pattern="[a-z0-5]{8,0}">
+            </label>
+        </fieldset>
+        <label for="submit" id="sub"><input type="submit" name="submit" id="submit"></label>
+    </form>
+</body>
+</html>
