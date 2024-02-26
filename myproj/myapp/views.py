@@ -13,6 +13,7 @@ def index(request):
     return render(request,'login.html')
 
 def sign(request):
+    """
     if request.method=='post':
         psswd=request.post.get('pass')
         userid=request.post.get('Name')
@@ -28,10 +29,12 @@ def sign(request):
     myuser.save()
     
     messages.success(request,"You have sucessfully logged in")
+    """
     
         
         
-    return redirect('index')
+    return render(request,'sign.html')
+
 
 
 
