@@ -5,6 +5,7 @@ from django.contrib import messages
 
 def index(request):
     
+    
     if request.method == 'POST':
         userid=request.POST.get('name')
         psswd=request.POST.get('pass')
@@ -13,7 +14,7 @@ def index(request):
     return render(request,'login.html')
 
 def sign(request):
-    """
+
     if request.method=='post':
         psswd=request.post.get('pass')
         userid=request.post.get('Name')
@@ -22,14 +23,14 @@ def sign(request):
         country=request.post.get('country')
         adress=request.post.get('adress')
         
-    myuser=User.objective.create(userid,psswd,mail,adress)
+    myuser=User.objective.create.create_user(userid,psswd,mail,adress)
     myuser.ph=phone
     myuser.cy=country
     
     myuser.save()
-    
+ 
     messages.success(request,"You have sucessfully logged in")
-    """
+   
     
         
         
