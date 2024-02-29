@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-    <link rel="stylesheet" href="static\css\sign.css">
+    <link rel="stylesheet" href="sign.css">
 </head>
 <body>
-    <form method="post" target="_blank">
+    <form method="post">
         <fieldset>
             <h1>Sign In</h1>
             <label for="Name">Name:
@@ -18,7 +18,7 @@
             </label>
             <label for="adress">Adress:
                 <input type="text" name="adress" id="adress" placeholder="Enter Your adress" required>
-            </label> 
+            </label>
             <p>Choose The Country :</p>
             <select name="country" id="country" required> 
                 <option value="">(select option)</option>
@@ -32,12 +32,12 @@
                 <input type="email" name="email" id="email" placeholder="Enter Your Email"required>
             </label>
             <label for="pass">Password:
-                <input type="password" name="pass" id="pass" placeholder="Enter Your Password" pattern="[a-z0-5]{8,0}" required>
+                <input type="password" name="pass" id="pass" placeholder="Enter Your Password"  required>
+            </label>
+            <label for="Submit" class="sub">
+                <input type="submit" value="submit" name="Submit" id="Submit">
             </label>
         </fieldset>
-        <label for="Submit" class="sub">
-            <input type="submit" value="submit" name="Submit" id="Submit">
-        </label>
     </form>
 </body>
 </html>

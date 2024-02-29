@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN PAGE</title>
-    <link rel="stylesheet" href="static\css\login.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <header>
+        <h1>E KAIVA</h1>
+    </header>
     <form method="POST" target="_blank">
         <fieldset>
+            
             <h1>LOGIN</h1>
-            <label for="name">USER NAME:
+        
+            <label for="name">
                 <input type="text" name="name" id="name" placeholder="USER NAME OR ID" required>
             </label>
-            <label for="pass">PASSWORD:
+            <label for="pass">
                 <input type="password" name="pass" id="pass" placeholder="password" pattern="[a-z0-5]{8,0}">
             </label>
+            <button type="submit" name="submit"> LOGIN </button>
+            <button type="submit" name="submit"> SIGN IN </button>
         </fieldset>
-        <label for="submit" id="sub"><input type="submit" name="submit" id="submit"></label>
     </form>
 </body>
 </html>

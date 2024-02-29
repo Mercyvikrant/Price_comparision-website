@@ -1,0 +1,93 @@
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon-container{
+    padding: .5rem;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 3rem;
+}
+
+nav ul li a{
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+nav> ul{
+    display: flex;
+    list-style: none;  
+}
+.container{
+    flex-wrap: wrap;
+    display: flex;
+    padding: 10rem;
+    text-align:center;
+    justify-content: space-around;
+}
+.sub{
+    text-align: center;
+}
+body{
+    background-image: url("https://otherwisz.com/wp-content/uploads/2020/05/owblog-ecommerce-blog-graphic-final2.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.icon{
+    padding:.4rem;
+}
+.icon button i{
+    padding: .6rem;
+}
+
+.icon button {
+    border-radius: 2rem;
+}
+.icon button:hover{
+    background-color: yellow;
+}
+nav ul li :hover{
+    color: black;
+    font-size: 1.5rem;
+}
+
+.find{
+    min-width: 250px;
+}
+
+.find input[type="search"]{
+    border-radius: 1.5rem;
+    padding:.6rem 3rem;
+    font-size: .9rem;
+    border-width: .2rem;
+    background-color:rgb(163, 241, 241);
+}
+.btn{
+    position: relative;
+    left: -30px;
+    border: none;
+    font-size: 1rem;
+    background-color:rgb(163, 241, 241);
+}
+
+
+
+.sub button{
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background-color:rgb(163, 241, 241);
+}
+.sub button:hover{
+    font-size: 1.5rem;
+    filter:drop-shadow(5px 2px 40px rgb(255, 21, 0));
+}
