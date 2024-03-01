@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 
+def home(request):
+    return render(request,'Home.html')
+
 def index(request):
     
     
@@ -14,6 +17,7 @@ def index(request):
     return render(request,'login.html')
 
 def sign(request):
+    """
 
     if request.method=='post':
         psswd=request.post.get('pass')
@@ -30,7 +34,7 @@ def sign(request):
     myuser.save()
  
     messages.success(request,"You have sucessfully logged in")
-   
+   """
     
         
         
