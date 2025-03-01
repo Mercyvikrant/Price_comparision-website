@@ -1,45 +1,55 @@
 from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
+import mysql.connector
 
-def home(request):
-    return render(request,'Home.html')
-
-def index(request):
-    
-    
-    if request.method == 'POST':
-        userid=request.POST.get('name')
-        psswd=request.POST.get('pass')
-        
-    
-    return render(request,'login.html')
+conn = mysql.connector.connect(host='127.0.0.1', user='root', password='sanu', database='price')
+mycur = conn.cursor()
 
 def sign(request):
-    """
-
-    if request.method=='post':
-        psswd=request.post.get('pass')
-        userid=request.post.get('Name')
-        phone=request.post.get('phone')
-        mail=request.post.get('email')
-        country=request.post.get('country')
-        adress=request.post.get('adress')
+    if request.method == 'POST':
+        name = request.POST.get('Name', '')
+        phone = request.POST.get('phone', '')
+        address = request.POST.get('address', '')
+        country = request.POST.get('country', '')
+        email = request.POST.get('email', '')
+        password = request.POST.get('pass', '')
         
-    myuser=User.objective.create.create_user(userid,psswd,mail,adress)
-    myuser.ph=phone
-    myuser.cy=country
+        # Validate phone number
+        if phone.isdigit():  # Check if phone contains only digits
+            # Prevent SQL injection by using parameterized queries
+            query = "INSERT INTO user1 VALUES (%s, %s, %s, %s, %s, %s)"
+            data = (name, phone, address, country, email, password)
+            mycur.execute(query, data)
+            conn.commit()
+            return render(request, 'login.html')
+        else:
+            # Handle invalid phone number
+            messages.error(request, 'Invalid phone number')
+            return render(request, 'sign.html')
     
-    myuser.save()
- 
-    messages.success(request,"You have sucessfully logged in")
-   """
+    return render(request, 'sign.html')
+
+
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email', '')
+        password = request.POST.get('pass', '')
+        
+        # Prevent SQL injection by using parameterized queries
+        query = "SELECT * FROM user1 WHERE email=%s AND password=%s"
+        data = (email, password)
+        mycur.execute(query, data)
+        result = mycur.fetchall()
+        
+        if result:
+            return render(request, 'Home.html')
+        else:
+            # Redirect to a specific URL when login fails
+            return redirect('https://www.smartprix.com/')
     
-        
-        
-    return render(request,'sign.html')
-
-
-
+    return render(request, 'login.html')
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
         <h1>E KAIVA</h1>
     </header>
     <form method="POST" target="_blank">
+        {% csrf_token %}
         <fieldset>
             
             <h1>LOGIN</h1>
@@ -22,7 +24,8 @@
                 <input type="password" name="pass" id="pass" placeholder="password" pattern="[a-z0-5]{8,0}">
             </label>
             <button type="submit" name="submit"> LOGIN </button>
-            <button type="submit" name="submit"> SIGN IN </button>
+            <button type="submit" href="signin"  name="submit"> SIGN IN </button>
+           
         </fieldset>
     </form>
 </body>
